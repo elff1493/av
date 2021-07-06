@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image {{hash}}</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<body>
+
+
+
+<div class="row">
+  <div class="column">
+      <a href="/im/{{p.hash}}">
+    <img src="/image/{{p.hash}}.{{p.ex}}" style='width: 90%; background-repeat: no-repeat; background-size: contain; margin-top: auto;
+  margin-bottom: auto; display: block;'/>
+          </a>
+  </div>
+  <div class="column">
+    <img src="/image/{{hash}}.{{ex}}" style='width: 100%; background-repeat: no-repeat; background-size: contain; margin-left: auto;
+  margin-right: auto; display: block; '/>
+  </div>
+  <div class="column">
+      <a href="/im/{{n.hash}}">
+    <img src="/image/{{n.hash}}.{{n.ex}}" style='width: 90%; background-repeat: no-repeat; background-size: contain; margin-left: auto;
+  margin-right: auto; display: block;'/>
+      </a>
+  </div>
+</div>
+
+
+<center>
+
+    <form action="/addtag" method="post">
+        {{form.add_tag}}
+        {{form.add_tag_go}}
+        <p>
+            {{form.url}}
+    </form>
+<form action="/im/{{hash}}" method="post" style="display: block;  margin-bottom: 100px">
+    <p>
+    {{ form.name.label }}
+    {{form.name}}
+    <p>
+    date:
+    {{form.date}}
+    <p>
+    {{form.tag}}
+
+    <p>
+    {{form.tags.list}}
+    <p>
+    is deleted:
+    {{form.deleted}}
+    <p>
+    <p>
+    {{form.go}}
+</form>
+</center>
+<p>
+    <center>
+<img src="/imaget/{{hash}}.{{ex}}" style='width: 90%; background-repeat: no-repeat; background-size: contain; margin-top: auto;
+  margin-bottom: auto; display: block;'/>
+    </center>
+<p>
+    <center>
+
+<a href="/">
+hompage
+</a>
+
+<p>
+.
+<p>
+.
+<p>
+.
+</center>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>images</title>
+</head>
+<body>
+
+
+ <table  width="100%" >
+    {% for y in x1 %}
+        <tr>
+        {% for x in y1 %}
+            <td>
+            <a href="/im/{{ im[x + y*10][0] }}">
+            <img src="/thumb{{ (im[x + y*10][0]  + '.' + im[x + y*10][1])|thumbnail('200x200')}}" style=' width: 100%; object-fit: contain'/>
+            </a>
+            </td>
+        {% endfor %}
+        </tr>
+     {% endfor %}
+
+ </table>
+ <center>
+ <div  style = "margin-left: auto;
+  margin-right: auto; display: block; margin-bottom: 100px">
+     <a href="/page/{{p-1}}">
+        <font size="10">previous page</font>
+    </a>
+     .    .
+    <a href="/page/{{p+1}}">
+        <font size="10">next page</font>
+    </a>
+
+ </div>
+ </center>
+
+</body>
+</html>
